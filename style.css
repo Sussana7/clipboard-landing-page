@@ -1,0 +1,296 @@
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.background {
+  background-image: url("images/bg-header-desktop.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 200px;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  font-weight: 300;
+  font-family: "Bai Jamjuree", sans-serif;
+  font-style: normal;
+}
+
+.main-logo {
+  display: block;
+  margin: 0 auto; /* This horizontally centers block-level elements with a set width (or an intrinsic width like images have) */
+}
+
+h1,
+h2 {
+  color: hsl(210, 10%, 33%);
+  text-align: center;
+  padding-top: 5rem;
+}
+
+p {
+  color: hsl(201, 11%, 66%);
+  text-align: center;
+  padding: 1rem 1rem;
+}
+
+/******* BUTTON STYLES ******/
+
+.coloured-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding-top: 1rem;
+  cursor: pointer;
+}
+
+.green-button {
+  background-color: hsl(171, 66%, 44%);
+  border: none;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  color: hsl(0, 100%, 100%);
+  cursor: pointer;
+}
+
+.blue-button {
+  background-color: hsl(233, 100%, 69%);
+  border: none;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  color: hsl(0, 100%, 100%);
+  cursor: pointer;
+}
+
+/* Hover effect: shadow + glow + slight lift */
+.green-button:hover {
+  box-shadow: 0 0 12px hsl(171, 66%, 60%), 0 4px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}
+
+.blue-button:hover {
+  box-shadow: 0 0 12px hsl(233, 100%, 75%), 0 4px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}
+
+/* This makes buttons stack vertically on small screens */
+@media (max-width: 600px) {
+  .coloured-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/******* PRIMARY CONTAINER STYLES ******/
+
+.primary-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap; /* This wraps the text when needed */
+  padding: 2rem;
+}
+
+.primary-img {
+  flex: 1;
+  max-width: 500px;
+}
+
+.primary-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.primary-text {
+  padding-bottom: 5rem;
+  flex: 1;
+  max-width: 400px;
+}
+
+/* This makes it stack vertically on smaller screens */
+@media (max-width: 768px) {
+  .primary-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .primary-text {
+    max-width: 100%;
+  }
+
+  .primary-img {
+    max-width: 100%;
+  }
+}
+
+/****** SECONDARY CONTAINER STYLES ******/
+
+.secondary-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  padding-top: 3rem;
+}
+
+.secondary-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 10rem 5%;
+  flex-wrap: wrap;
+}
+
+.secondary-container > div {
+  flex: 1 1 30%; /* This specifies that each div will grow, shrink, and take up 30% of the container's width */
+  text-align: center;
+}
+
+.secondary-container img {
+  width: 4rem;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.secondary-container h2 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.secondary-container p {
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1.5;
+  padding: 0 1rem;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .secondary-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .secondary-container > div {
+    width: 90%; /* This sets each div to take 90% of the container's width */
+  }
+}
+
+.logos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 5%;
+  flex-wrap: wrap;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .logos {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .logos > div {
+    width: 90%; /* This sets each div to take 90% of the container's width */
+  }
+}
+
+.tertiary-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 5%;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+/* This makes each direct child of .tertiary-container should grow evenly */
+.tertiary-container > div {
+  flex: 1 1 30%;
+  text-align: center;
+}
+
+.tertiary-links a {
+  text-decoration: none;
+  font-size: 1rem;
+  margin: 0.3rem 0;
+  cursor: pointer;
+}
+
+.tertiary-links {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 0.75rem 2rem; /* row gap and column gap */
+}
+
+.tertiary-links a:hover {
+  color: hsl(171, 66%, 44%);
+  cursor: pointer;
+}
+
+/* Makes it stack vertically on small screens */
+@media (max-width: 600px) {
+  .tertiary-links {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+.bottom-logos {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.bottom-logos a:hover img {
+  filter: brightness(0) saturate(100%) invert(52%) sepia(78%) saturate(308%)
+    hue-rotate(129deg) brightness(96%) contrast(95%);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .tertiary-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .tertiary-container > div {
+    width: 100%; /* Take full width when stacked */
+    margin-bottom: 1rem;
+  }
+}
+
+.bottom-logo img {
+  width: 6rem;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .bottom-logo img {
+    width: 4rem;
+  }
+}
